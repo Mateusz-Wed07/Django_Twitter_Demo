@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for tweet in tweets %}
+        <div class="media">
+            {# TODO: poprawić src do profilowego usera :) #}
+            <img class="user-photo" src="/static/images/chuck-norris.png" class="mr-3" alt="user photo" />
+            <div class="media-body">
+                <h5 class="mt-0">{{ tweet.user.username }}</h5>
+                {{ tweet.content }}
+            </div>
+        </div>
+    {% empty %}
+       <div>Narazie brak tweetów :(</div>
+    {% endfor %}
+{% endblock %}

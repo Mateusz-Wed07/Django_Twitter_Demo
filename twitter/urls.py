@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from utwitter.views import FrontPage, AddTweetView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', FrontPage.as_view()),
+    path('add-tweet',AddTweetView.as_view())
 ]
